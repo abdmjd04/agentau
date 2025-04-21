@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
-import { ChevronRight } from 'lucide-react'
-import Lottie from 'lottie-react'
-import aiAnimation from './animations/ai-animation.json'
-export function Hero() {
+import { ChevronRight } from "lucide-react";
+import { useLottie } from "lottie-react";
+import aiAnimation from "./animations/ai-animation.json";
+export default function Hero() {
+  const defaultOptions = {
+    animationData: aiAnimation,
+    loop: true,
+  };
+
+  const { View } = useLottie(defaultOptions);
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
@@ -41,14 +47,7 @@ export function Hero() {
         <div className="w-full md:w-1/2 mt-12 md:mt-0 relative">
           <div className="relative w-full aspect-square max-w-lg mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-[#5c6cff]/30 to-[#ff3366]/30 rounded-3xl blur-3xl"></div>
-            <div className="relative z-10">
-              <Lottie
-                animationData={aiAnimation}
-                loop={true}
-                className="w-full h-full"
-               
-              />
-            </div>
+            <div className="relative z-10">{View}</div>
           </div>
           <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#5c6cff]/20 rounded-full blur-3xl"></div>
         </div>
@@ -58,5 +57,5 @@ export function Hero() {
       <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-[#ff3366]/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-[#5c6cff]/10 rounded-full blur-3xl"></div>
     </section>
-  )
+  );
 }
