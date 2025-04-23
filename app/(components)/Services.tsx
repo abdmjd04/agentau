@@ -1,52 +1,51 @@
-"use client";
-
-import { Code, Database, Server, Layout, Shield, BarChart } from "lucide-react";
-import { motion } from "framer-motion";
+import React from 'react'
+import { Code, Database, Server, Layout, Shield, BarChart } from 'lucide-react'
+import { motion } from 'framer-motion'
 export function Services() {
   const services = [
     {
       icon: <Code size={32} className="text-[#ff3366]" />,
-      title: "AI Agents",
+      title: 'AI Agents',
       description:
-        "Custom LLM agents built using LangGraph and AutoGen for specialized tasks and workflows",
-      gradient: "from-[#ff3366]/20 to-[#ff3366]/5",
+        'Custom LLM agents built using LangGraph and AutoGen for specialized tasks and workflows',
+      gradient: 'from-[#ff3366]/20 to-[#ff3366]/5',
     },
     {
       icon: <Database size={32} className="text-[#5c6cff]" />,
-      title: "MLOps Infrastructure",
+      title: 'MLOps Infrastructure',
       description:
-        "End-to-end MLflow pipelines with CI/CD integration and Triton for model deployment",
-      gradient: "from-[#5c6cff]/20 to-[#5c6cff]/5",
+        'End-to-end MLflow pipelines with CI/CD integration and Triton for model deployment',
+      gradient: 'from-[#5c6cff]/20 to-[#5c6cff]/5',
     },
     {
       icon: <Server size={32} className="text-[#36d6ff]" />,
-      title: "DevOps Solutions",
+      title: 'DevOps Solutions',
       description:
-        "Containerized deployments with Docker, Kubernetes, and GitHub Actions automation",
-      gradient: "from-[#36d6ff]/20 to-[#36d6ff]/5",
+        'Containerized deployments with Docker, Kubernetes, and GitHub Actions automation',
+      gradient: 'from-[#36d6ff]/20 to-[#36d6ff]/5',
     },
     {
       icon: <Layout size={32} className="text-[#ffb238]" />,
-      title: "Full-stack Applications",
+      title: 'Full-stack Applications',
       description:
-        "Modern web applications and dashboards built with Next.js and React",
-      gradient: "from-[#ffb238]/20 to-[#ffb238]/5",
+        'Modern web applications and dashboards built with Next.js and React',
+      gradient: 'from-[#ffb238]/20 to-[#ffb238]/5',
     },
     {
       icon: <Shield size={32} className="text-[#36ffb2]" />,
-      title: "Compliance-focused AI",
+      title: 'Compliance-focused AI',
       description:
-        "Domain-specific AI solutions for ESG reporting and maritime optimization",
-      gradient: "from-[#36ffb2]/20 to-[#36ffb2]/5",
+        'Domain-specific AI solutions for ESG reporting and maritime optimization',
+      gradient: 'from-[#36ffb2]/20 to-[#36ffb2]/5',
     },
     {
       icon: <BarChart size={32} className="text-[#ff36d6]" />,
-      title: "Energy Sector Solutions",
+      title: 'Energy Sector Solutions',
       description:
-        "Specialized AI tools for energy monitoring, optimization and forecasting",
-      gradient: "from-[#ff36d6]/20 to-[#ff36d6]/5",
+        'Specialized AI tools for energy monitoring, optimization and forecasting',
+      gradient: 'from-[#ff36d6]/20 to-[#ff36d6]/5',
     },
-  ];
+  ]
   const containerVariants = {
     hidden: {},
     visible: {
@@ -54,7 +53,7 @@ export function Services() {
         staggerChildren: 0.2,
       },
     },
-  };
+  }
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -64,12 +63,12 @@ export function Services() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 100,
         damping: 10,
       },
     },
-  };
+  }
   return (
     <section id="services" className="py-20 md:py-32 relative">
       <div className="container mx-auto px-6">
@@ -121,7 +120,7 @@ export function Services() {
                   rotate: 5,
                 }}
                 transition={{
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 400,
                   damping: 10,
                 }}
@@ -165,5 +164,5 @@ export function Services() {
         className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#ff3366]/10 rounded-full blur-3xl"
       />
     </section>
-  );
+  )
 }
