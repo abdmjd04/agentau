@@ -1,26 +1,30 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import React, { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
-    window.addEventListener('scroll', handleScroll)
+    };
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0a0a1a]/90 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#0a0a1a]/90 backdrop-blur-md py-4"
+          : "bg-transparent py-6"
+      }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center">
@@ -62,12 +66,9 @@ export function Navbar() {
           </a>
         </nav>
         <div className="hidden md:flex space-x-4">
-          <a
-            href="#contact"
-            className="px-4 py-2 bg-white text-[#111132] rounded-full font-medium hover:bg-opacity-90 transition-all"
-          >
-            Join us
-          </a>
+          <button className="px-4 py-2 bg-white text-[#111132] rounded-full font-medium hover:bg-opacity-90 transition-all">
+            Book Now
+          </button>
           <a
             href="#contact"
             className="px-4 py-2 border border-white text-white rounded-full font-medium hover:bg-white hover:bg-opacity-10 transition-all"
@@ -134,5 +135,5 @@ export function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }

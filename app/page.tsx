@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import { Contact } from "lucide-react";
 import { AboutUs } from "./(components)/AboutUs";
 import { CaseStudies } from "./(components)/CaseStudies";
 import { Process } from "./(components)/Process";
@@ -17,7 +16,6 @@ export default function Home() {
       <Process />
       <CaseStudies />
       <AboutUs />
-      <Contact />
     </>
   );
 }
