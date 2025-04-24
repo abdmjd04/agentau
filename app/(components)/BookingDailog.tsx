@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Clock, Video, AlertCircle } from "lucide-react";
+import { X, Calendar, Clock, Video, AlertCircle, Earth } from "lucide-react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 interface FormErrors {
   date?: string;
   time?: string;
+  timeZone?: string;
   name?: string;
   email?: string;
 }
@@ -18,6 +19,9 @@ export function BookingDialog({
 }) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string>("");
+  const [selectedTimezone, setSelectedTimezone] = useState(
+    Intl.DateTimeFormat().resolvedOptions().timeZone
+  );
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
@@ -115,7 +119,7 @@ export function BookingDialog({
               <h2 className="text-2xl font-bold">Book a Strategy Call</h2>
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-white transition-colors"
+                className=" cursor-pointer text-gray-400 hover:text-white transition-colors"
               >
                 <X size={24} />
               </button>
@@ -168,6 +172,42 @@ export function BookingDialog({
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Time Zone
+                </label>
+                <div className="relative">
+                  <select
+                    value={selectedTimezone}
+                    onChange={(e) => {
+                      setSelectedTimezone(e.target.value);
+                      setErrors({
+                        ...errors,
+                        timeZone: undefined,
+                      });
+                    }}
+                    className={`w-full px-4 py-3 bg-white/5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5c6cff] focus:border-transparent transition-all appearance-none text-white ${
+                      errors.timeZone ? "border-red-500" : "border-white/10"
+                    }`}
+                  >
+                    {Intl.supportedValuesOf("timeZone").map((time) => (
+                      <option className=" text-black" key={time} value={time}>
+                        {time}
+                      </option>
+                    ))}
+                  </select>
+                  <Earth
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    size={20}
+                  />
+                </div>
+                {errors.time && (
+                  <div className="flex items-center gap-1 mt-1.5 text-red-500 text-sm">
+                    <AlertCircle size={14} />
+                    <span>{errors.time}</span>
+                  </div>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Select Time (30min)
                 </label>
                 <div className="relative">
@@ -184,9 +224,11 @@ export function BookingDialog({
                       errors.time ? "border-red-500" : "border-white/10"
                     }`}
                   >
-                    <option value="">Select a time</option>
+                    <option value="" className=" text-black">
+                      Select a time
+                    </option>
                     {timeSlots.map((time) => (
-                      <option key={time} value={time}>
+                      <option className=" text-black" key={time} value={time}>
                         {time}
                       </option>
                     ))}
@@ -264,7 +306,7 @@ export function BookingDialog({
                 whileTap={{
                   scale: isSubmitting ? 1 : 0.98,
                 }}
-                className={`w-full px-6 py-3 bg-gradient-to-r from-[#ff3366] to-[#ff3366]/80 text-white rounded-lg font-medium transition-all ${
+                className={` cursor-pointer w-full px-6 py-3 bg-gradient-to-r from-[#ff3366] to-[#ff3366]/80 text-white rounded-lg font-medium transition-all ${
                   isSubmitting
                     ? "opacity-70 cursor-not-allowed"
                     : "hover:shadow-lg hover:shadow-[#ff3366]/20"

@@ -70,7 +70,7 @@ export function Services() {
     },
   }
   return (
-    <section id="services" className="py-20 md:py-32 relative">
+    <section id="services" className="pt-10 pb-20 md:pt-12 md:pb-32 relative">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{

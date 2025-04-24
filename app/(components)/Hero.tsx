@@ -145,7 +145,7 @@ export default function Hero() {
             >
               <motion.button
                 onClick={() => setIsBookingOpen(true)}
-                className="px-6 py-3 bg-gradient-to-r from-[#ff3366] to-[#ff3366]/80 text-white rounded-full font-medium inline-flex items-center hover:shadow-lg hover:shadow-[#ff3366]/20 transition-all"
+                className=" cursor-pointer px-6 py-3 bg-gradient-to-r from-[#ff3366] to-[#ff3366]/80 text-white rounded-full font-medium inline-flex items-center hover:shadow-lg hover:shadow-[#ff3366]/20 transition-all"
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
