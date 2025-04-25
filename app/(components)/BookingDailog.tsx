@@ -29,9 +29,9 @@ export function BookingDialog({
   // Generate available time slots (9 AM to 5 PM, 30-min intervals)
   const timeSlots = useMemo(() => {
     const slots = [];
-    for (let hour = 9; hour < 17; hour++) {
-      slots.push(`${hour}:00`);
-      slots.push(`${hour}:30`);
+    for (let hour = 0; hour < 24; hour++) {
+      slots.push(`${hour.toString().padStart(2, "0")}:00`);
+      slots.push(`${hour.toString().padStart(2, "0")}:30`);
     }
     return slots;
   }, []);
