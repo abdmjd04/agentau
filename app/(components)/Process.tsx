@@ -8,7 +8,7 @@ export function Process() {
       icon: <Search size={24} className="text-white" />,
       title: "Discovery",
       description:
-        "We analyze your business needs and identify opportunities for AI integration",
+        "We analyze your business & identify AI integration opportunities",
       color: "#ff3366",
       gradient: "from-[#ff3366]/20 to-transparent",
     },
@@ -88,7 +88,7 @@ export function Process() {
       <div className="absolute inset-0 bg-[#0a0a1a]"></div>
       {/* Animated background gradients */}
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 h-10"
         initial="initial"
         animate="animate"
       >
@@ -154,7 +154,7 @@ export function Process() {
                   },
                 }}
                 className={`
-                  relative p-8 rounded-2xl transition-all duration-300
+                 line-clamp-4 relative p-8 rounded-2xl transition-all duration-300
                   bg-gradient-to-b from-white/5 to-transparent
                   border border-white/10 hover:border-white/20
                   backdrop-blur-sm
