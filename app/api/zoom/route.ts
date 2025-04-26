@@ -3,7 +3,7 @@ import getZoomAccessToken from "@/lib/get-zoom-access-toke";
 import { NextResponse } from "next/server";
 
 interface ScheduleMeetingDto {
-  startTime: Date;
+  startTime: string;
   timezone: string;
   attendeeEmail: string;
   name: string;
@@ -15,6 +15,7 @@ export async function POST(req: Request) {
     const body: ScheduleMeetingDto = await req.json();
 
     const { startTime, timezone, attendeeEmail, name } = body;
+    console.log(startTime);
 
     // Get Zoom access token
     const accessToken = await getZoomAccessToken();

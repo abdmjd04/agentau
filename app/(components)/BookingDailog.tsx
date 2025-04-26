@@ -98,13 +98,14 @@ export function BookingDialog({
   };
 
   const scheduleMeeting = async () => {
+    const formattedDate = new Intl.DateTimeFormat("en-CA").format(selectedDate);
+    const finalISO = `${formattedDate}T${selectedTime}:00.000Z`;
     try {
       const response = await axios.post("/api/zoom", {
-        topic: "Doctor Appointment",
-        start_time: "2025-04-30T10:30:00", // Full date-time in ISO format
-        timezone: "Asia/Colombo",
-        attendeeEmail: "thaksharadhananjaya@gmail.com",
-        name: "Thakshara",
+        startTime: finalISO,
+        timezone: selectedTimezone,
+        attendeeEmail: email,
+        name,
       });
       toast.success(
         `Your meeting is scheduled! Invitation has been sent to ${response?.data?.email}.`,
