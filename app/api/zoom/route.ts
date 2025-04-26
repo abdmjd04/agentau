@@ -15,8 +15,6 @@ export async function POST(req: Request) {
     const body: ScheduleMeetingDto = await req.json();
 
     const { startTime, timezone, attendeeEmail, name } = body;
-    console.log(startTime);
-
     // Get Zoom access token
     const accessToken = await getZoomAccessToken();
 

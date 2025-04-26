@@ -141,10 +141,14 @@ export function Navbar() {
           </div>
         </div>
       )}
-      <BookingDialog
-        isOpen={isBookingOpen}
-        onClose={() => setIsBookingOpen(false)}
-      />
+      {isBookingOpen && (
+        <div className=" h-screen">
+          <BookingDialog
+            isOpen={isBookingOpen}
+            onClose={() => setIsBookingOpen(false)}
+          />
+        </div>
+      )}
     </header>
   );
 }
