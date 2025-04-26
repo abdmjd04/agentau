@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, Clock, Video, AlertCircle, Earth } from "lucide-react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { toast } from "react-toastify";
+import axios from "axios";
 interface FormErrors {
   date?: string;
   time?: string;
@@ -66,8 +68,7 @@ export function BookingDialog({
       return;
     }
     try {
-      // Handle form submission here
-      // Add your API call or submission logic
+      await scheduleMeeting();
       onClose();
     } catch (error) {
       console.error("Submission error:", error);
@@ -95,6 +96,31 @@ export function BookingDialog({
       scale: 1,
     },
   };
+
+  const scheduleMeeting = async () => {
+    try {
+      const response = await axios.post("/api/zoom", {
+        topic: "Doctor Appointment",
+        start_time: "2025-04-30T10:30:00", // Full date-time in ISO format
+        timezone: "Asia/Colombo",
+        attendeeEmail: "thaksharadhananjaya@gmail.com",
+        name: "Thakshara",
+      });
+      toast.success(
+        `Your meeting is scheduled! Invitation has been sent to ${response?.data?.email}.`,
+        {
+          style: {
+            backgroundColor: "rgb(255, 51, 102)",
+            color: "white",
+          },
+        }
+      );
+    } catch (error) {
+      console.error(error);
+      toast.error("Oops, something went wrong. Please try again later.");
+    }
+  };
+
   // Get today's date at midnight for comparison
   const today = new Date();
   today.setHours(0, 0, 0, 0);
