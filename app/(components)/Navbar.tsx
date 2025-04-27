@@ -4,11 +4,14 @@ import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { BookingDialog } from "./BookingDailog";
+import { useRouter } from "next/navigation";
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const handleBookingOpen = () => setIsBookingOpen(true);
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -39,31 +42,31 @@ export function Navbar() {
         </div>
         <nav className="hidden md:flex space-x-8">
           <Link
-            href="#"
+            href="/"
             className="text-white hover:text-[#ff3366] transition-colors"
           >
             Home
           </Link>
           <Link
-            href="#services"
+            href="/#services"
             className="text-white hover:text-[#ff3366] transition-colors"
           >
             What We Do
           </Link>
           <Link
-            href="#process"
+            href="/#process"
             className="text-white hover:text-[#ff3366] transition-colors"
           >
             How We Work
           </Link>
           <Link
-            href="#projects"
+            href="/#projects"
             className="text-white hover:text-[#ff3366] transition-colors"
           >
             Projects
           </Link>
           <Link
-            href="#about"
+            href="/#about"
             className="text-white hover:text-[#ff3366] transition-colors"
           >
             About Us
@@ -71,13 +74,13 @@ export function Navbar() {
         </nav>
         <div className="hidden md:flex space-x-4">
           <button
-            onClick={handleBookingOpen}
+            onClick={() => router.push("/booking")}
             className=" cursor-pointer px-4 py-2 bg-white text-[#111132] rounded-full font-medium hover:bg-opacity-90 transition-all"
           >
             Book Now
           </button>
           <Link
-            href="#process"
+            href="/#process"
             className="px-4 py-2 border border-white text-white rounded-full font-medium hover:bg-white hover:bg-opacity-10 transition-all hover:text-black"
           >
             Learn more
@@ -95,44 +98,44 @@ export function Navbar() {
         <div className="md:hidden bg-[#0a0a1a]/95 backdrop-blur-md">
           <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
             <Link
-              href="#"
+              href="/"
               className="text-white hover:text-[#ff3366] transition-colors py-2"
             >
               Home
             </Link>
             <Link
-              href="#services"
+              href="/#services"
               className="text-white hover:text-[#ff3366] transition-colors py-2"
             >
               What We Do
             </Link>
             <Link
-              href="#process"
+              href="/#process"
               className="text-white hover:text-[#ff3366] transition-colors py-2"
             >
               How We Work
             </Link>
             <Link
-              href="#projects"
+              href="/#projects"
               className="text-white hover:text-[#ff3366] transition-colors py-2"
             >
               Projects
             </Link>
             <Link
-              href="#about"
+              href="/#about"
               className="text-white hover:text-[#ff3366] transition-colors py-2"
             >
               About Us
             </Link>
             <div className="flex flex-col space-y-3 pt-2">
               <button
-                onClick={handleBookingOpen}
+                onClick={() => router.push("/booking")}
                 className="px-4 py-2 bg-white text-[#111132] rounded-full font-medium text-center hover:bg-opacity-90 transition-all"
               >
                 Book Now
               </button>
               <Link
-                href="#process"
+                href="/#process"
                 className="px-4 py-2 border border-white text-white rounded-full font-medium text-center hover:bg-white hover:bg-opacity-10 transition-all"
               >
                 Learn more

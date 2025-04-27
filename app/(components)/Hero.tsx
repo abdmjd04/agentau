@@ -6,11 +6,15 @@ import aiAnimation from "./animations/ai-animation.json";
 import { useState } from "react";
 import { BookingDialog } from "./BookingDailog";
 import { motion } from "framer-motion";
+import { PopupWidget } from "react-calendly";
+import Calandy from "./Calandy";
+import { useRouter } from "next/navigation";
 export default function Hero() {
   const defaultOptions = {
     animationData: aiAnimation,
     loop: true,
   };
+  const router = useRouter();
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const { View } = useLottie(defaultOptions);
   const textVariants = {
@@ -71,6 +75,15 @@ export default function Hero() {
     <>
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
+          {/* <PopupWidget
+            url="https://calendly.com/futureartificialintelligences/30min"
+        
+            rootElement={document.getElementById("root")}
+            text="Click here to schedule!"
+            textColor="#ffffff"
+            color="#00a2ff"
+          /> */}
+         
           <motion.div
             className="w-full md:w-1/2 z-10"
             initial={{
@@ -144,7 +157,7 @@ export default function Hero() {
               }}
             >
               <motion.button
-                onClick={() => setIsBookingOpen(true)}
+                onClick={() => router.push("/booking")}
                 className=" cursor-pointer px-6 py-3 bg-gradient-to-r from-[#ff3366] to-[#ff3366]/80 text-white rounded-full font-medium inline-flex items-center hover:shadow-lg hover:shadow-[#ff3366]/20 transition-all"
                 variants={buttonVariants}
                 whileHover="hover"
