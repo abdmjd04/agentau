@@ -6,8 +6,6 @@ import aiAnimation from "./animations/ai-animation.json";
 import { useState } from "react";
 import { BookingDialog } from "./BookingDailog";
 import { motion } from "framer-motion";
-import { PopupWidget } from "react-calendly";
-import Calandy from "./Calandy";
 import { useRouter } from "next/navigation";
 export default function Hero() {
   const defaultOptions = {

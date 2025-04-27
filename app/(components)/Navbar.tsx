@@ -10,7 +10,6 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const handleBookingOpen = () => setIsBookingOpen(true);
   const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
