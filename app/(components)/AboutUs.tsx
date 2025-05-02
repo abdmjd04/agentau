@@ -1,32 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import majeed from "../(assets)/images/majeed.webp";
 export function AboutUs() {
   const team = [
     {
-      name: "Alex Chen",
+      name: "Majeed Hussain",
       role: "Founder & CEO",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop",
+      image: majeed,
     },
-    {
-      name: "Sarah Johnson",
-      role: "Chief AI Architect",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=987&auto=format&fit=crop",
-    },
-    {
-      name: "David Park",
-      role: "Head of Engineering",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=987&auto=format&fit=crop",
-    },
-    {
-      name: "Maya Rodriguez",
-      role: "ML Operations Lead",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=922&auto=format&fit=crop",
-    },
+    // {
+    //   name: "Sarah Johnson",
+    //   role: "Chief AI Architect",
+    //   image:
+    //     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=987&auto=format&fit=crop",
+    // },
+    // {
+    //   name: "David Park",
+    //   role: "Head of Engineering",
+    //   image:
+    //     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=987&auto=format&fit=crop",
+    // },
+    // {
+    //   name: "Maya Rodriguez",
+    //   role: "ML Operations Lead",
+    //   image:
+    //     "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=922&auto=format&fit=crop",
+    // },
   ];
   const containerVariants = {
     hidden: {
@@ -143,7 +144,8 @@ export function AboutUs() {
           viewport={{
             once: true,
           }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          //className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className=" flex justify-center"
         >
           {team.map((member, index) => (
             <motion.div
@@ -162,7 +164,8 @@ export function AboutUs() {
                 }}
                 className="mb-6 relative mx-auto w-48 h-48 overflow-hidden rounded-full border-2 border-white/20"
               >
-                <img
+                <Image
+                  fill
                   src={member.image}
                   alt={member.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

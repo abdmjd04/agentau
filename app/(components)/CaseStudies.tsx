@@ -118,7 +118,6 @@ export function CaseStudies() {
               transform their operations with AI`}
             </p>
           </div>
-
         </motion.div>
         <motion.div
           variants={containerVariants}
@@ -178,7 +177,7 @@ export function CaseStudies() {
                   {project.category}
                 </span>
                 <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="text-white/80 mb-6">{project.description}</p>
+                <>{project.description}</>
                 <div className="flex items-center">
                   <span className="text-sm font-medium mr-2">Learn more</span>
                   <ArrowRight

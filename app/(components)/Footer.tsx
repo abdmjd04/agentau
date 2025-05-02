@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-[#080816] py-12 border-t border-white/10">
@@ -15,12 +15,6 @@ export function Footer() {
               solve real-world problems.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
