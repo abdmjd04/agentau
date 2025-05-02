@@ -18,7 +18,6 @@ export default function RootLayout({
     <html lang="en" className=" scroll-smooth">
       <body className={`antialiased`}>
         <ToastContainer theme="colored" autoClose={4000} />
-
         <main>{children}</main>
       </body>
     </html>

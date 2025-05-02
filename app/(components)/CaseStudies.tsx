@@ -5,11 +5,13 @@ import { motion } from "framer-motion";
 import climaTech from "../(assets)/images/climatech.webp";
 import energytech from "../(assets)/images/energytech.webp";
 import meditech from "../(assets)/images/meditech.webp";
+import Link from "next/link";
 export function CaseStudies() {
   const projects = [
     {
       title: "Environmental Monitoring & ESG Compliance Agents",
       category: "ClimateTech AI",
+      href: "/projects/environmental-monitoring",
       description: (
         <motion.p
           className="text-md text-gray-300 mt-4"
@@ -28,6 +30,7 @@ export function CaseStudies() {
     },
     {
       title: "Offshore Platform Defect Detection Agents",
+      href: "/projects/offshore-platform",
       category: "EnergyTech AI",
       description: (
         <motion.p
@@ -42,11 +45,12 @@ export function CaseStudies() {
           maintenance strategies.
         </motion.p>
       ),
-      image: meditech,
+      image: energytech,
       gradient: "from-[#ff3366]/80 to-[#ff36d6]/80",
     },
     {
       title: "Surgical Risk Assessment & Prediction Agents",
+      href: "/projects/risk-assessment",
       category: "MedTech AI",
       description: (
         <motion.p
@@ -62,7 +66,7 @@ export function CaseStudies() {
           AI-powered predictive imaging analysis.
         </motion.p>
       ),
-      image: energytech,
+      image: meditech,
       gradient: "from-[#36ffb2]/80 to-[#ffb238]/80",
     },
   ];
@@ -129,64 +133,65 @@ export function CaseStudies() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{
-                y: -10,
-              }}
-              className="group relative overflow-hidden rounded-2xl h-[400px] cursor-pointer"
-            >
-              <div className="absolute inset-0">
-                <motion.img
-                  initial={{
-                    scale: 1,
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                  }}
-                  transition={{
-                    duration: 0.6,
-                  }}
-                  src={project.image.src}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-                <div
-                  className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-70`}
-                />
-              </div>
+            <Link key={index} href={project.href}>
               <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
+                variants={itemVariants}
+                whileHover={{
+                  y: -10,
                 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  delay: index * 0.2,
-                }}
-                className="absolute inset-0 p-8 flex flex-col justify-end"
+                className="group relative overflow-hidden rounded-2xl h-[400px] cursor-pointer"
               >
-                <span className="text-sm font-medium text-white/80 mb-2">
-                  {project.category}
-                </span>
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <>{project.description}</>
-                <div className="flex items-center">
-                  <span className="text-sm font-medium mr-2">Learn more</span>
-                  <ArrowRight
-                    size={16}
-                    className="transform group-hover:translate-x-2 transition-transform"
+                <div className="absolute inset-0">
+                  <motion.img
+                    initial={{
+                      scale: 1,
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                    }}
+                    src={project.image.src}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-70`}
                   />
                 </div>
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
+                  transition={{
+                    delay: index * 0.2,
+                  }}
+                  className="absolute inset-0 p-8 flex flex-col justify-end"
+                >
+                  <span className="text-sm font-medium text-white/80 mb-2">
+                    {project.category}
+                  </span>
+                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                  <>{project.description}</>
+                  <div className="flex items-center">
+                    <span className="text-sm font-medium mr-2">Learn more</span>
+                    <ArrowRight
+                      size={16}
+                      className="transform group-hover:translate-x-2 transition-transform"
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
