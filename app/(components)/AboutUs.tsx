@@ -3,11 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import majeed from "../(assets)/images/majeed.webp";
+import Link from "next/link";
 export function AboutUs() {
   const team = [
     {
       name: "Majeed Hussain",
       role: "Founder & CEO",
+      href: "teams/founder",
       image: majeed,
     },
     // {
@@ -148,32 +150,30 @@ export function AboutUs() {
           className=" flex justify-center"
         >
           {team.map((member, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="text-center group"
-            >
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20,
-                }}
-                className="mb-6 relative mx-auto w-48 h-48 overflow-hidden rounded-full border-2 border-white/20"
-              >
-                <Image
-                  fill
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+            <Link key={index} href={member.href}>
+              <motion.div variants={itemVariants} className="text-center group">
+                <motion.div
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20,
+                  }}
+                  className="mb-6 relative mx-auto w-48 h-48 overflow-hidden rounded-full border-2 border-white/20"
+                >
+                  <Image
+                    fill
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </motion.div>
+                <h4 className="text-xl font-semibold">{member.name}</h4>
+                <p className="text-gray-400">{member.role}</p>
               </motion.div>
-              <h4 className="text-xl font-semibold">{member.name}</h4>
-              <p className="text-gray-400">{member.role}</p>
-            </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
