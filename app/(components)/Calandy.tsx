@@ -14,8 +14,8 @@ const Calendly = () => {
   return (
     <div
       className="calendly-inline-widget"
-      data-url={"https://calendly.com/mjdhsn2804/30min?background_color=1a1a1a&text_color=ffffff&primary_color=da0c65"}
-      style={{ height: "700px", width: "100%" }}
+      data-url={"https://calendly.com/mjdhsn2804/30min"}
+      style={{ height: "100%", width: "100%" }}
     ></div>
   );
 };

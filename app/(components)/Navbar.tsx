@@ -3,14 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { BookingDialog } from "./BookingDailog";
-import { useRouter } from "next/navigation";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -34,7 +30,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center">
-          <Link href="#" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <span className="text-[#ff3366] font-bold text-3xl mr-1">ai</span>
             <span className="text-white font-bold text-3xl">af</span>
           </Link>
@@ -72,12 +68,13 @@ export function Navbar() {
           </Link>
         </nav>
         <div className="hidden md:flex space-x-4">
-          <button
-            onClick={() => router.push("/booking")}
+          <Link
+            href="/booking"
+            target="_blank"
             className=" cursor-pointer px-4 py-2 bg-white text-[#111132] rounded-full font-medium hover:bg-opacity-90 transition-all"
           >
             Book Now
-          </button>
+          </Link>
           <Link
             href="/#process"
             className="px-4 py-2 border border-white text-white rounded-full font-medium hover:bg-white hover:bg-opacity-10 transition-all hover:text-black"
@@ -127,12 +124,13 @@ export function Navbar() {
               About Us
             </Link>
             <div className="flex flex-col space-y-3 pt-2">
-              <button
-                onClick={() => router.push("/booking")}
+              <Link
+                href="/booking"
+                target="_blank"
                 className="px-4 py-2 bg-white text-[#111132] rounded-full font-medium text-center hover:bg-opacity-90 transition-all"
               >
                 Book Now
-              </button>
+              </Link>
               <Link
                 href="/#process"
                 className="px-4 py-2 border border-white text-white rounded-full font-medium text-center hover:bg-white hover:bg-opacity-10 transition-all"
@@ -141,14 +139,6 @@ export function Navbar() {
               </Link>
             </div>
           </div>
-        </div>
-      )}
-      {isBookingOpen && (
-        <div className=" h-screen">
-          <BookingDialog
-            isOpen={isBookingOpen}
-            onClose={() => setIsBookingOpen(false)}
-          />
         </div>
       )}
     </header>

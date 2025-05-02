@@ -3,17 +3,13 @@
 import { ChevronRight } from "lucide-react";
 import { useLottie } from "lottie-react";
 import aiAnimation from "./animations/ai-animation.json";
-import { useState } from "react";
-import { BookingDialog } from "./BookingDailog";
+
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 export default function Hero() {
   const defaultOptions = {
     animationData: aiAnimation,
     loop: true,
   };
-  const router = useRouter();
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const { View } = useLottie(defaultOptions);
   const textVariants = {
     hidden: {
@@ -81,7 +77,7 @@ export default function Hero() {
             textColor="#ffffff"
             color="#00a2ff"
           /> */}
-         
+
           <motion.div
             className="w-full md:w-1/2 z-10"
             initial={{
@@ -154,8 +150,9 @@ export default function Hero() {
                 duration: 0.5,
               }}
             >
-              <motion.button
-                onClick={() => router.push("/booking")}
+              <motion.a
+                href="/booking"
+                target="_blank"
                 className=" cursor-pointer px-6 py-3 bg-gradient-to-r from-[#ff3366] to-[#ff3366]/80 text-white rounded-full font-medium inline-flex items-center hover:shadow-lg hover:shadow-[#ff3366]/20 transition-all"
                 variants={buttonVariants}
                 whileHover="hover"
@@ -175,7 +172,7 @@ export default function Hero() {
                 >
                   <ChevronRight size={18} className="ml-1" />
                 </motion.div>
-              </motion.button>
+              </motion.a>
               <motion.a
                 href="#projects"
                 className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full font-medium hover:bg-white/20 transition-all"
@@ -221,10 +218,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </section>
-      <BookingDialog
-        isOpen={isBookingOpen}
-        onClose={() => setIsBookingOpen(false)}
-      />
     </>
   );
 }

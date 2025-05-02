@@ -2,33 +2,67 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import climaTech from "../(assets)/images/climatech.webp";
+import energytech from "../(assets)/images/energytech.webp";
+import meditech from "../(assets)/images/meditech.webp";
 export function CaseStudies() {
   const projects = [
     {
-      title: "SmartShip Optimizer",
-      category: "Maritime AI",
-      description:
-        "An intelligent system for optimizing ship routes, fuel consumption, and maintenance schedules using predictive analytics",
-      image:
-        "https://ucarecdn.com/a0982c9a-bce3-4d04-9474-49d14ebf4950/Gemini_Generated_Image_b4ohncb4ohncb4oh.jpeg",
+      title: "Environmental Monitoring & ESG Compliance Agents",
+      category: "ClimateTech AI",
+      description: (
+        <motion.p
+          className="text-md text-gray-300 mt-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          Accelerating ESG compliance by{" "}
+          <span className="text-white font-semibold">60%</span> while reducing
+          reporting costs by{" "}
+          <span className="text-white font-semibold">$300K annually</span>.
+        </motion.p>
+      ),
+      image: climaTech,
       gradient: "from-[#36d6ff]/80 to-[#5c6cff]/80",
     },
     {
-      title: "ESG Compliance Agent",
-      category: "Regulatory Tech",
-      description:
-        "AI-powered agent that automates ESG reporting, ensures compliance, and identifies sustainability improvement opportunities",
-      image:
-        "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=1170&auto=format&fit=crop",
+      title: "Offshore Platform Defect Detection Agents",
+      category: "EnergyTech AI",
+      description: (
+        <motion.p
+          className="text-md text-gray-300 mt-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          Saving{" "}
+          <span className="text-white font-semibold">$450K annually</span> by
+          proactively identifying structural anomalies and optimizing offshore
+          maintenance strategies.
+        </motion.p>
+      ),
+      image: meditech,
       gradient: "from-[#ff3366]/80 to-[#ff36d6]/80",
     },
     {
-      title: "AIOps Monitoring Tool",
-      category: "DevOps",
-      description:
-        "Intelligent monitoring system that predicts infrastructure issues before they occur and automates resolution",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop",
+      title: "Surgical Risk Assessment & Prediction Agents",
+      category: "MedTech AI",
+      description: (
+        <motion.p
+          className="text-md text-gray-300 mt-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          Enhancing surgical outcomes by{" "}
+          <span className="text-white font-semibold">35%</span> and reducing
+          insurance claim costs by{" "}
+          <span className="text-white font-semibold">25%</span> through
+          AI-powered predictive imaging analysis.
+        </motion.p>
+      ),
+      image: energytech,
       gradient: "from-[#36ffb2]/80 to-[#ffb238]/80",
     },
   ];
@@ -84,13 +118,7 @@ export function CaseStudies() {
               transform their operations with AI`}
             </p>
           </div>
-          <a
-            href="#contact"
-            className="mt-6 md:mt-0 inline-flex items-center text-[#5c6cff] hover:text-[#36d6ff] transition-colors"
-          >
-            View all case studies
-            <ArrowRight size={16} className="ml-2" />
-          </a>
+
         </motion.div>
         <motion.div
           variants={containerVariants}
@@ -121,7 +149,7 @@ export function CaseStudies() {
                   transition={{
                     duration: 0.6,
                   }}
-                  src={project.image}
+                  src={project.image.src}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />

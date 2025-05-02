@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { Navbar } from "./(components)/Navbar";
-import { Footer } from "./(components)/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import "./globals.css";
+
 export const metadata: Metadata = {
-  title: "AI Services",
-  description: "AI Services for Businesses",
+  title: "Agentaurix",
+  description: "Agentaurix for Businesses",
 };
 
 export default function RootLayout({
@@ -16,12 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className=" scroll-smooth">
       <body className={`antialiased`}>
         <ToastContainer theme="colored" autoClose={4000} />
-        <Navbar />
+
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );
