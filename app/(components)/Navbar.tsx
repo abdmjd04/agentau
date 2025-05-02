@@ -35,7 +35,7 @@ export function Navbar() {
             <span className="text-white font-bold text-3xl">af</span>
           </Link>
         </div>
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 md:pr-16 lg:pr-0">
           <Link
             href="/"
             className="text-white hover:text-[#ff3366] transition-colors"
@@ -67,7 +67,7 @@ export function Navbar() {
             About Us
           </Link>
         </nav>
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden lg:flex space-x-4">
           <Link
             href="/booking"
             target="_blank"
