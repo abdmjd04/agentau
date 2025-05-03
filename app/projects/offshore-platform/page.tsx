@@ -148,6 +148,7 @@ export default function CaseStudyInsidePage02() {
         </h2>
         <motion.a
           href="/booking"
+          target="_blank"
           whileHover={{ scale: 1.1 }}
           className="bg-pink-500 px-12 py-4 text-white rounded-full"
         >
