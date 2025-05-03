@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   publisher: "Agentaurix",
   description:
     "We build production-grade AI systems from LLM agents to DevOps pipelines",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
