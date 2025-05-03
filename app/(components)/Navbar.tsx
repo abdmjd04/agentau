@@ -3,6 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+
+import logo from "@/app/(assets)/images/logo.webp";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,8 +34,11 @@ export function Navbar() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <span className="text-[#ff3366] font-bold text-3xl mr-1">ai</span>
-            <span className="text-white font-bold text-3xl">af</span>
+          <Image
+            src={logo}
+            alt="Logo"
+            className="w-16"
+          />
           </Link>
         </div>
         <nav className="hidden md:flex space-x-8 md:pr-16 lg:pr-0">

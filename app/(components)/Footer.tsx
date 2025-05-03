@@ -1,4 +1,8 @@
 import { Github, Linkedin } from "lucide-react";
+import Image from "next/image";
+
+import logo from "@/app/(assets)/images/logo.webp";
+import Link from "next/link";
 export function Footer() {
   return (
     <footer className="bg-[#080816] py-12 border-t border-white/10">
@@ -6,8 +10,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <span className="text-[#ff3366] font-bold text-2xl mr-1">ai</span>
-              <span className="text-white font-bold text-2xl">af</span>
+              <Link href="/" className="flex items-center">
+                <Image src={logo} alt="Logo" className="w-16" />
+              </Link>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               We build production-grade AI systems from LLM agents to DevOps
@@ -98,7 +103,7 @@ export function Footer() {
         </div>
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © 2023 AI Agency. All rights reserved.
+            {`© ${new Date().getFullYear()} AI Agency. All rights reserved.`}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a
