@@ -38,36 +38,36 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   AI Agents
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   MLOps Infrastructure
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   DevOps Solutions
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Full-stack Applications
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -75,28 +75,28 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/#about"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/#projects"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Case Studies
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -106,12 +106,12 @@ export function Footer() {
             {`© ${new Date().getFullYear()} AI Agency. All rights reserved.`}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a
+            <Link
               href="#"
               className="text-gray-500 hover:text-white text-sm transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
             <a
               href="#"
               className="text-gray-500 hover:text-white text-sm transition-colors"
