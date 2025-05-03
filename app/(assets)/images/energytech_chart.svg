@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="278pt" height="404pt" viewBox="0.00 0.00 278.26 404.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 400)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-400 274.26,-400 274.26,4 -4,4"/>
+<!-- SensorNetwork -->
+<g id="node1" class="node">
+<title>SensorNetwork</title>
+<polygon fill="lightgreen" stroke="lightgreen" points="224.2,-396 46.07,-396 46.07,-360 224.2,-360 224.2,-396"/>
+<text text-anchor="middle" x="135.13" y="-373.8" font-family="Times,serif" font-size="14.00">Edge Sensor Data Collection</text>
+</g>
+<!-- StreamIngest -->
+<g id="node2" class="node">
+<title>StreamIngest</title>
+<polygon fill="lightgreen" stroke="lightgreen" points="234.89,-324 35.38,-324 35.38,-288 234.89,-288 234.89,-324"/>
+<text text-anchor="middle" x="135.13" y="-301.8" font-family="Times,serif" font-size="14.00">Kafka / MQTT Stream Ingestion</text>
+</g>
+<!-- SensorNetwork&#45;&gt;StreamIngest -->
+<g id="edge1" class="edge">
+<title>SensorNetwork-&gt;StreamIngest</title>
+<path fill="none" stroke="black" d="M135.13,-359.7C135.13,-352.41 135.13,-343.73 135.13,-335.54"/>
+<polygon fill="black" stroke="black" points="138.63,-335.62 135.13,-325.62 131.63,-335.62 138.63,-335.62"/>
+</g>
+<!-- TimeSeriesModel -->
+<g id="node3" class="node">
+<title>TimeSeriesModel</title>
+<polygon fill="lightgreen" stroke="lightgreen" points="255.94,-252 14.32,-252 14.32,-216 255.94,-216 255.94,-252"/>
+<text text-anchor="middle" x="135.13" y="-229.8" font-family="Times,serif" font-size="14.00">Anomaly Detection (Time-Series + CV)</text>
+</g>
+<!-- StreamIngest&#45;&gt;TimeSeriesModel -->
+<g id="edge2" class="edge">
+<title>StreamIngest-&gt;TimeSeriesModel</title>
+<path fill="none" stroke="black" d="M135.13,-287.7C135.13,-280.41 135.13,-271.73 135.13,-263.54"/>
+<polygon fill="black" stroke="black" points="138.63,-263.62 135.13,-253.62 131.63,-263.62 138.63,-263.62"/>
+</g>
+<!-- DefectClassifier -->
+<g id="node4" class="node">
+<title>DefectClassifier</title>
+<polygon fill="lightgreen" stroke="lightgreen" points="245.36,-180 24.9,-180 24.9,-144 245.36,-144 245.36,-180"/>
+<text text-anchor="middle" x="135.13" y="-157.8" font-family="Times,serif" font-size="14.00">Transformer-based Defect Classifier</text>
+</g>
+<!-- TimeSeriesModel&#45;&gt;DefectClassifier -->
+<g id="edge3" class="edge">
+<title>TimeSeriesModel-&gt;DefectClassifier</title>
+<path fill="none" stroke="black" d="M135.13,-215.7C135.13,-208.41 135.13,-199.73 135.13,-191.54"/>
+<polygon fill="black" stroke="black" points="138.63,-191.62 135.13,-181.62 131.63,-191.62 138.63,-191.62"/>
+</g>
+<!-- LLM_Generator -->
+<g id="node5" class="node">
+<title>LLM_Generator</title>
+<polygon fill="lightgreen" stroke="lightgreen" points="270.26,-108 0,-108 0,-72 270.26,-72 270.26,-108"/>
+<text text-anchor="middle" x="135.13" y="-85.8" font-family="Times,serif" font-size="14.00">LLM Agent: Predictive Maintenance Reports</text>
+</g>
+<!-- DefectClassifier&#45;&gt;LLM_Generator -->
+<g id="edge4" class="edge">
+<title>DefectClassifier-&gt;LLM_Generator</title>
+<path fill="none" stroke="black" d="M135.13,-143.7C135.13,-136.41 135.13,-127.73 135.13,-119.54"/>
+<polygon fill="black" stroke="black" points="138.63,-119.62 135.13,-109.62 131.63,-119.62 138.63,-119.62"/>
+</g>
+<!-- Alerting -->
+<g id="node6" class="node">
+<title>Alerting</title>
+<polygon fill="lightgreen" stroke="lightgreen" points="219.15,-36 51.12,-36 51.12,0 219.15,0 219.15,-36"/>
+<text text-anchor="middle" x="135.13" y="-13.8" font-family="Times,serif" font-size="14.00">Dashboard &amp; Alert System</text>
+</g>
+<!-- LLM_Generator&#45;&gt;Alerting -->
+<g id="edge5" class="edge">
+<title>LLM_Generator-&gt;Alerting</title>
+<path fill="none" stroke="black" d="M135.13,-71.7C135.13,-64.41 135.13,-55.73 135.13,-47.54"/>
+<polygon fill="black" stroke="black" points="138.63,-47.62 135.13,-37.62 131.63,-47.62 138.63,-47.62"/>
+</g>
+</g>
+</svg>

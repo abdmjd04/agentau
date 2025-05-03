@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="286pt" height="404pt" viewBox="0.00 0.00 286.07 404.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 400)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-400 282.07,-400 282.07,4 -4,4"/>
+<!-- IoT_Sensors -->
+<g id="node1" class="node">
+<title>IoT_Sensors</title>
+<polygon fill="lightpink" stroke="lightpink" points="208.48,-396 69.59,-396 69.59,-360 208.48,-360 208.48,-396"/>
+<text text-anchor="middle" x="139.03" y="-373.8" font-family="Times,serif" font-size="14.00">IoT Emission Sensors</text>
+</g>
+<!-- DataLake -->
+<g id="node2" class="node">
+<title>DataLake</title>
+<polygon fill="lightpink" stroke="lightpink" points="248.7,-324 29.37,-324 29.37,-288 248.7,-288 248.7,-324"/>
+<text text-anchor="middle" x="139.03" y="-301.8" font-family="Times,serif" font-size="14.00">Data Lake Ingestion (S3, BigQuery)</text>
+</g>
+<!-- IoT_Sensors&#45;&gt;DataLake -->
+<g id="edge1" class="edge">
+<title>IoT_Sensors-&gt;DataLake</title>
+<path fill="none" stroke="black" d="M139.03,-359.7C139.03,-352.41 139.03,-343.73 139.03,-335.54"/>
+<polygon fill="black" stroke="black" points="142.53,-335.62 139.03,-325.62 135.53,-335.62 142.53,-335.62"/>
+</g>
+<!-- CV_Monitoring -->
+<g id="node3" class="node">
+<title>CV_Monitoring</title>
+<polygon fill="lightpink" stroke="lightpink" points="278.07,-252 0,-252 0,-216 278.07,-216 278.07,-252"/>
+<text text-anchor="middle" x="139.03" y="-229.8" font-family="Times,serif" font-size="14.00">Satellite/CV-Based Environmental Monitoring</text>
+</g>
+<!-- DataLake&#45;&gt;CV_Monitoring -->
+<g id="edge2" class="edge">
+<title>DataLake-&gt;CV_Monitoring</title>
+<path fill="none" stroke="black" d="M139.03,-287.7C139.03,-280.41 139.03,-271.73 139.03,-263.54"/>
+<polygon fill="black" stroke="black" points="142.53,-263.62 139.03,-253.62 135.53,-263.62 142.53,-263.62"/>
+</g>
+<!-- ESG_Estimator -->
+<g id="node4" class="node">
+<title>ESG_Estimator</title>
+<polygon fill="lightpink" stroke="lightpink" points="244.83,-180 33.24,-180 33.24,-144 244.83,-144 244.83,-180"/>
+<text text-anchor="middle" x="139.03" y="-157.8" font-family="Times,serif" font-size="14.00">Emission &amp; Compliance Estimator</text>
+</g>
+<!-- CV_Monitoring&#45;&gt;ESG_Estimator -->
+<g id="edge3" class="edge">
+<title>CV_Monitoring-&gt;ESG_Estimator</title>
+<path fill="none" stroke="black" d="M139.03,-215.7C139.03,-208.41 139.03,-199.73 139.03,-191.54"/>
+<polygon fill="black" stroke="black" points="142.53,-191.62 139.03,-181.62 135.53,-191.62 142.53,-191.62"/>
+</g>
+<!-- LLM_Report -->
+<g id="node5" class="node">
+<title>LLM_Report</title>
+<polygon fill="lightpink" stroke="lightpink" points="263.87,-108 14.2,-108 14.2,-72 263.87,-72 263.87,-108"/>
+<text text-anchor="middle" x="139.03" y="-85.8" font-family="Times,serif" font-size="14.00">LLM Agent: Auto ESG Report Generator</text>
+</g>
+<!-- ESG_Estimator&#45;&gt;LLM_Report -->
+<g id="edge4" class="edge">
+<title>ESG_Estimator-&gt;LLM_Report</title>
+<path fill="none" stroke="black" d="M139.03,-143.7C139.03,-136.41 139.03,-127.73 139.03,-119.54"/>
+<polygon fill="black" stroke="black" points="142.53,-119.62 139.03,-109.62 135.53,-119.62 142.53,-119.62"/>
+</g>
+<!-- ComplianceAPI -->
+<g id="node6" class="node">
+<title>ComplianceAPI</title>
+<polygon fill="lightpink" stroke="lightpink" points="232.19,-36 45.88,-36 45.88,0 232.19,0 232.19,-36"/>
+<text text-anchor="middle" x="139.03" y="-13.8" font-family="Times,serif" font-size="14.00">APIs to Share with Regulators</text>
+</g>
+<!-- LLM_Report&#45;&gt;ComplianceAPI -->
+<g id="edge5" class="edge">
+<title>LLM_Report-&gt;ComplianceAPI</title>
+<path fill="none" stroke="black" d="M139.03,-71.7C139.03,-64.41 139.03,-55.73 139.03,-47.54"/>
+<polygon fill="black" stroke="black" points="142.53,-47.62 139.03,-37.62 135.53,-47.62 142.53,-47.62"/>
+</g>
+</g>
+</svg>

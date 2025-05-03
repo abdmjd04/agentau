@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250pt" height="404pt" viewBox="0.00 0.00 250.30 404.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 400)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-400 246.3,-400 246.3,4 -4,4"/>
+<!-- ImagingInput -->
+<g id="node1" class="node">
+<title>ImagingInput</title>
+<polygon fill="lightyellow" stroke="lightyellow" points="202.27,-396 40.04,-396 40.04,-360 202.27,-360 202.27,-396"/>
+<text text-anchor="middle" x="121.15" y="-373.8" font-family="Times,serif" font-size="14.00">MRI/CT Imaging (PACS)</text>
+</g>
+<!-- MetadataFusion -->
+<g id="node2" class="node">
+<title>MetadataFusion</title>
+<polygon fill="lightyellow" stroke="lightyellow" points="208.85,-324 33.46,-324 33.46,-288 208.85,-288 208.85,-324"/>
+<text text-anchor="middle" x="121.15" y="-301.8" font-family="Times,serif" font-size="14.00">Patient Metadata Integration</text>
+</g>
+<!-- ImagingInput&#45;&gt;MetadataFusion -->
+<g id="edge1" class="edge">
+<title>ImagingInput-&gt;MetadataFusion</title>
+<path fill="none" stroke="black" d="M121.15,-359.7C121.15,-352.41 121.15,-343.73 121.15,-335.54"/>
+<polygon fill="black" stroke="black" points="124.65,-335.62 121.15,-325.62 117.65,-335.62 124.65,-335.62"/>
+</g>
+<!-- RiskPredictor -->
+<g id="node3" class="node">
+<title>RiskPredictor</title>
+<polygon fill="lightyellow" stroke="lightyellow" points="242.3,-252 0,-252 0,-216 242.3,-216 242.3,-252"/>
+<text text-anchor="middle" x="121.15" y="-229.8" font-family="Times,serif" font-size="14.00">DL Model: Pre-Surgical Risk Prediction</text>
+</g>
+<!-- MetadataFusion&#45;&gt;RiskPredictor -->
+<g id="edge2" class="edge">
+<title>MetadataFusion-&gt;RiskPredictor</title>
+<path fill="none" stroke="black" d="M121.15,-287.7C121.15,-280.41 121.15,-271.73 121.15,-263.54"/>
+<polygon fill="black" stroke="black" points="124.65,-263.62 121.15,-253.62 117.65,-263.62 124.65,-263.62"/>
+</g>
+<!-- LLM_Agent -->
+<g id="node4" class="node">
+<title>LLM_Agent</title>
+<polygon fill="lightyellow" stroke="lightyellow" points="240.73,-180 1.57,-180 1.57,-144 240.73,-144 240.73,-180"/>
+<text text-anchor="middle" x="121.15" y="-157.8" font-family="Times,serif" font-size="14.00">LLM Agent: Generate Surgical Insights</text>
+</g>
+<!-- RiskPredictor&#45;&gt;LLM_Agent -->
+<g id="edge3" class="edge">
+<title>RiskPredictor-&gt;LLM_Agent</title>
+<path fill="none" stroke="black" d="M121.15,-215.7C121.15,-208.41 121.15,-199.73 121.15,-191.54"/>
+<polygon fill="black" stroke="black" points="124.65,-191.62 121.15,-181.62 117.65,-191.62 124.65,-191.62"/>
+</g>
+<!-- FHIR_Interface -->
+<g id="node5" class="node">
+<title>FHIR_Interface</title>
+<polygon fill="lightyellow" stroke="lightyellow" points="213.93,-108 28.37,-108 28.37,-72 213.93,-72 213.93,-108"/>
+<text text-anchor="middle" x="121.15" y="-85.8" font-family="Times,serif" font-size="14.00">FHIR-Compliant EHR Output</text>
+</g>
+<!-- LLM_Agent&#45;&gt;FHIR_Interface -->
+<g id="edge4" class="edge">
+<title>LLM_Agent-&gt;FHIR_Interface</title>
+<path fill="none" stroke="black" d="M121.15,-143.7C121.15,-136.41 121.15,-127.73 121.15,-119.54"/>
+<polygon fill="black" stroke="black" points="124.65,-119.62 121.15,-109.62 117.65,-119.62 124.65,-119.62"/>
+</g>
+<!-- DecisionSupport -->
+<g id="node6" class="node">
+<title>DecisionSupport</title>
+<polygon fill="lightyellow" stroke="lightyellow" points="224.23,-36 18.07,-36 18.07,0 224.23,0 224.23,-36"/>
+<text text-anchor="middle" x="121.15" y="-13.8" font-family="Times,serif" font-size="14.00">Clinical Decision Support System</text>
+</g>
+<!-- FHIR_Interface&#45;&gt;DecisionSupport -->
+<g id="edge5" class="edge">
+<title>FHIR_Interface-&gt;DecisionSupport</title>
+<path fill="none" stroke="black" d="M121.15,-71.7C121.15,-64.41 121.15,-55.73 121.15,-47.54"/>
+<polygon fill="black" stroke="black" points="124.65,-47.62 121.15,-37.62 117.65,-47.62 124.65,-47.62"/>
+</g>
+</g>
+</svg>

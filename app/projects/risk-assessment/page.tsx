@@ -11,6 +11,9 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import Image from "next/image";
+
+import meditechChartSvg from "@/app/(assets)/images/meditech_chart.svg";
 
 ChartJS.register(
   CategoryScale,
@@ -68,7 +71,7 @@ export default function CaseStudyInsidePage04() {
       </section>
 
       <section className="py-20 bg-[#0e1a36] grid md:grid-cols-2 gap-10 p-10">
-        <div>
+        <div className=" md:pl-8">
           <h2 className="text-2xl font-bold mb-6">The Challenge</h2>
           <ul className="list-disc space-y-4 pl-5 text-pink-400">
             <li>High variability in pre-operative risk assessment accuracy.</li>
@@ -77,8 +80,8 @@ export default function CaseStudyInsidePage04() {
           </ul>
         </div>
         <div className="flex justify-center items-center">
-          <img
-            src="/pipeline_medtech_ai.svg"
+          <Image
+            src={meditechChartSvg}
             alt="MedTech AI Pipeline Diagram"
             className="w-96"
           />
