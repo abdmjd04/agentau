@@ -6,7 +6,16 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Agentaurix",
-  description: "Agentaurix for Businesses",
+  applicationName: "Agentaurix",
+  keywords: [
+    "AI Solutions",
+    "Full Stack Software Development",
+    "MLOps",
+    "DevOps",
+  ],
+  publisher: "Agentaurix",
+  description:
+    "We build production-grade AI systems from LLM agents to DevOps pipelines",
 };
 
 export default function RootLayout({
